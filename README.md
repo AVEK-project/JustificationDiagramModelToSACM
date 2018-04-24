@@ -7,10 +7,10 @@ Model transformation from Justification Diagram to SACM using EMF and ATL
 3. Change the configuration of the ATL transformation to switch between the examples
 
 # Project Organization 
-1. models directory constains the Ecore model for Justification Diagram and SACM
-2. JD-examples directory contains XMI instance of Justification Diagram to transform
-3. SACM-generated directory contains the outputs in XMI of the transformation of the examples
-4. JD2SCAM.atl contains the ALT transformation rules
+1. ```models``` directory constains the Ecore model for Justification Diagram and SACM
+2. ```JD-examples``` directory contains XMI instance of Justification Diagram to transform
+3. ```SACM-generated``` directory contains the outputs in XMI of the transformation of the examples
+4. ```JD2SCAM.atl``` contains the ALT transformation rules
 
 
 # Acknowledgement
