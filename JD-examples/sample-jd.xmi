@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="JD">
+	<JustificationDiagram name="Tests Validation Justification Diagram" steps="/1 /6"/>
+	<JustificationStep name="Unit tests step" conclusion="/2" supports="/3 /4" strategy="/5"/>
+	<Assertion isTerminal="true" name="Unit tests validated"/>
+	<Assertion isTerminal="true" name="Jacoco logs"/>
+	<Assertion isTerminal="true" name="Jenkins logs"/>
+	<Strategy name="Validate unit tests"/>
+	<JustificationStep name="Integration tests step" conclusion="/7" supports="/2 /8 /9" strategy="/10"/>
+	<Assertion isTerminal="true" name="Integration tests validated"/>
+	<Assertion isTerminal="true" name="SOAPUI logs"/>
+	<Assertion isTerminal="true" name="SOAPUI scenarii"/>
+	<Strategy name="Validate integration tests"/>
+</xmi:XMI>

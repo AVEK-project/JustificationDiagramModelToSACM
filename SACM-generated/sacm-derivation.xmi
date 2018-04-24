@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SACM_Argumentation="http://www.omg.org/spec/SACM/2.0/Argumentation">
+  <SACM_Argumentation:ArgumentPackage abstractForm="/6" content="Tests Validation Justification Diagram">
+    <argumentAsset xsi:type="SACM_Argumentation:AssertedInference" content="Unit tests step" source="/4 /5" target="/3" reasoning="/2"/>
+  </SACM_Argumentation:ArgumentPackage>
+  <SACM_Argumentation:ArgumentPackage content="AXONIC Tests Validation Justification Diagram">
+    <argumentAsset xsi:type="SACM_Argumentation:AssertedInference" content="Unit tests step" source="/13 /14" target="/12" reasoning="/11"/>
+  </SACM_Argumentation:ArgumentPackage>
+  <SACM_Argumentation:ArgumentReasoning content="Validate unit tests"/>
+  <SACM_Argumentation:Assertion content="Unit tests validated"/>
+  <SACM_Argumentation:Assertion content="Jacoco logs"/>
+  <SACM_Argumentation:Assertion content="Jenkins logs"/>
+  <SACM_Argumentation:ArgumentPackage isAbstract="true" content="AXONIC Tests Validation Justification Diagram">
+    <argumentAsset xsi:type="SACM_Argumentation:AssertedInference" content="Unit tests step" source="/9 /10" target="/8" reasoning="/7"/>
+  </SACM_Argumentation:ArgumentPackage>
+  <SACM_Argumentation:ArgumentReasoning content="Validate unit tests"/>
+  <SACM_Argumentation:Assertion content="AXONIC unit tests validated"/>
+  <SACM_Argumentation:Assertion content="Metrics"/>
+  <SACM_Argumentation:Assertion content="Execution trace"/>
+  <SACM_Argumentation:ArgumentReasoning content="Validate unit tests"/>
+  <SACM_Argumentation:Assertion content="AXONIC unit tests validated"/>
+  <SACM_Argumentation:Assertion content="Metrics"/>
+  <SACM_Argumentation:Assertion content="Execution trace"/>
+</xmi:XMI>

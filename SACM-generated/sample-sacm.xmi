@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SACM_Argumentation="http://www.omg.org/spec/SACM/2.0/Argumentation">
+  <SACM_Argumentation:ArgumentPackage content="Tests Validation Justification Diagram">
+    <argumentAsset xsi:type="SACM_Argumentation:AssertedInference" content="Unit tests step" source="/3 /4" target="/2" reasoning="/1"/>
+    <argumentAsset xsi:type="SACM_Argumentation:AssertedInference" content="Integration tests step" source="/7 /8 /9" target="/6" reasoning="/5"/>
+  </SACM_Argumentation:ArgumentPackage>
+  <SACM_Argumentation:ArgumentReasoning content="Validate unit tests"/>
+  <SACM_Argumentation:Assertion content="Unit tests validated"/>
+  <SACM_Argumentation:Assertion content="Jacoco logs"/>
+  <SACM_Argumentation:Assertion content="Jenkins logs"/>
+  <SACM_Argumentation:ArgumentReasoning content="Validate integration tests"/>
+  <SACM_Argumentation:Assertion content="Integration tests validated"/>
+  <SACM_Argumentation:Assertion content="Unit tests validated"/>
+  <SACM_Argumentation:Assertion content="SOAPUI logs"/>
+  <SACM_Argumentation:Assertion content="SOAPUI scenarii"/>
+</xmi:XMI>

@@ -1,0 +1,80 @@
+module JD2SACM;
+-- @path SACM=/JD_to_SACM/SACM.ecore
+-- @path JD=/JD_to_SACM/JD.ecore
+create OUT: SACM from IN: JD;
+
+helper context JD!JustificationDiagram def: isAbstract() : Boolean =
+	if JD!JustificationDiagram.allInstances()->collect(e | self = e.conforms).count()=0 then
+		false
+	else
+		true
+	endif;
+
+rule JustificationDiagram2ArgumentPackage{
+	from 
+		jd : JD!JustificationDiagram (not jd.isAbstract())
+	to 
+		package : SACM!ArgumentPackage (
+				content <- jd.name,
+				argumentAsset <- 
+					jd.steps ->
+					collect(e | thisModule.Step2Inference(e))->flatten(),
+					abstractForm <- jd.conforms->collect(e | thisModule.AbstractJustificationDiagram2ArgumentPackage(e)).first()
+			)
+		
+}
+
+lazy rule AbstractJustificationDiagram2ArgumentPackage{
+	from 
+		jd : JD!JustificationDiagram
+	to 
+		package : SACM!ArgumentPackage (
+				content <- jd.name,
+				argumentAsset <- 
+					jd.steps ->
+					collect(e | thisModule.Step2Inference(e))->flatten(),
+					abstractForm <- jd.conforms->collect(e | thisModule.AbstractJustificationDiagram2ArgumentPackage(e)).first(),
+					isAbstract <- true
+			)
+		
+}
+
+lazy rule Step2Inference{
+	from
+		step: JD!JustificationStep
+	to
+		inference: SACM!AssertedInference(
+			content <- step.name,
+			reasoning <- thisModule.Strategy2ArgumentReasoning(step.strategy),
+			target <- thisModule.Assertion2Assertion(step.conclusion),
+			source <- step.supports -> 
+				collect(e | thisModule.Assertion2Assertion(e))->flatten()
+			)
+}
+
+lazy rule Strategy2ArgumentReasoning{
+	from 
+		strategy: JD!Strategy
+	to
+		reasoning: SACM!ArgumentReasoning(
+			content <- strategy.name
+			)
+}
+
+lazy rule Assertion2Assertion{
+	from
+		a: JD!Assertion
+	to
+		assertion: SACM!Assertion(
+			content <- a.name
+			)
+}
+
+--lazy rule Artifact2ArtifactElement{
+--	from
+--		a: JD!Artifact
+--	to
+--		ap: SACM!ArtifactElement(
+			--content <- a.name
+--			)
+--}
